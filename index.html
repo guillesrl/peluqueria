@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stylo — Tu espacio ideal para el cambio</title>
+  <meta name="description" content="Peluquería de autor Stylo. Servicios de coloración editorial, cortes visajistas, tratamientos Capilares y reservas online.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="header">
+    <a href="#" class="brand" aria-label="Página de inicio Stylo">Stylo</a>
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="#servicios" class="nav-link">Servicios</a>
+      <a href="#reserva" class="nav-link">Reserva</a>
+      <a href="#contacto" class="nav-link">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Standalone Audiovisual Hero Section -->
+    <section class="hero" aria-label="Sección Principal Stylo">
+      <div class="hero-scroll-container">
+        <div class="hero-sticky">
+          <!-- Background Media (Canvas with frame sequence) -->
+          <div class="hero-media">
+            <canvas id="hero-canvas"></canvas>
+            <img src="media/frames/frame_0001.webp" alt="Ambiente de salón Stylo" class="media-poster-fallback" aria-hidden="true">
+          </div>
+
+          <!-- Localized Gradient Fade behind text -->
+          <div class="edge" aria-hidden="true"></div>
+
+          <!-- Centered Vertical Content Block inside left third -->
+          <div class="hero-container">
+            <div class="hero-content">
+              <h1 class="hero-title">
+                <span class="line-1 reveal-item">Tu espacio ideal</span>
+                <span class="line-2 italic-serif reveal-item">para el cambio.</span>
+              </h1>
+              
+              <p class="hero-description reveal-item">
+                Dale vida a tu cabello, luminosa y radiante.
+              </p>
+              
+              <div class="hero-cta-wrapper reveal-item">
+                <a href="#reserva" class="btn-primary">Conocer Stylo</a>
+              </div>
+            </div>
+
+            <!-- Hero Bottom Badges / Tags -->
+            <div class="hero-footer reveal-item">
+              <span class="tag">Color</span>
+              <span class="tag-separator" aria-hidden="true">/</span>
+              <span class="tag">Cortes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: Servicios -->
+    <section id="servicios" class="section-servicios">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <span class="section-subtitle">Experiencias únicas para tu cabello</span>
+          <h2 class="section-title">Nuestros Servicios</h2>
+        </div>
+
+        <div class="services-grid">
+          <!-- Card 1 -->
+          <article class="service-card scroll-reveal">
+            <div class="service-meta">
+              <span class="service-price">Desde 85€</span>
+              <span class="service-time">120 min</span>
+            </div>
+            <h3 class="service-name">Coloración Editorial & Balayage</h3>
+            <p class="service-desc">
+              Técnicas de aclarado a mano alzada para crear dimensiones naturales, reflejos luminosos y máxima nutrición de la fibra capilar.
+            </p>
+            <a href="#reserva" class="service-link">Reservar este servicio &rarr;</a>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="service-card scroll-reveal">
+            <div class="service-meta">
+              <span class="service-price">Desde 45€</span>
+              <span class="service-time">60 min</span>
+            </div>
+            <h3 class="service-name">Corte & Styling Visajista</h3>
+            <p class="service-desc">
+              Asesoría personalizada según la morfología de tu rostro, lavado sensorial relajante y peinado final con acabado profesional.
+            </p>
+            <a href="#reserva" class="service-link">Reservar este servicio &rarr;</a>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="service-card scroll-reveal">
+            <div class="service-meta">
+              <span class="service-price">Desde 60€</span>
+              <span class="service-time">75 min</span>
+            </div>
+            <h3 class="service-name">Tratamiento de Brillo Capilar</h3>
+            <p class="service-desc">
+              Ritual intensivo con aminoácidos y ácido hialurónico para restaurar la elasticidad, eliminar el encrespamiento y sellar la cutícula.
+            </p>
+            <a href="#reserva" class="service-link">Reservar este servicio &rarr;</a>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="service-card scroll-reveal">
+            <div class="service-meta">
+              <span class="service-price">Desde 55€</span>
+              <span class="service-time">60 min</span>
+            </div>
+            <h3 class="service-name">Peinados de Gala & Eventos</h3>
+            <p class="service-desc">
+              Recogidos editoriales, semirecogidos románticos y ondas al agua diseñados exclusivamente para ocasiones especiales.
+            </p>
+            <a href="#reserva" class="service-link">Reservar este servicio &rarr;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Reserva -->
+    <section id="reserva" class="section-reserva">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <span class="section-subtitle">Reserva tu momento</span>
+          <h2 class="section-title">Tu Cita en Stylo</h2>
+        </div>
+
+        <div class="reserva-card scroll-reveal">
+          <form id="reserva-form" class="reserva-form" onsubmit="return false;">
+            
+            <!-- Step 1: Select Service -->
+            <div class="form-group">
+              <label class="form-label">1. Selecciona el servicio</label>
+              <div class="service-pills">
+                <label class="pill-option">
+                  <input type="radio" name="servicio" value="color" checked>
+                  <span>Coloración & Balayage</span>
+                </label>
+                <label class="pill-option">
+                  <input type="radio" name="servicio" value="corte">
+                  <span>Corte & Styling</span>
+                </label>
+                <label class="pill-option">
+                  <input type="radio" name="servicio" value="tratamiento">
+                  <span>Tratamiento Capilar</span>
+                </label>
+                <label class="pill-option">
+                  <input type="radio" name="servicio" value="evento">
+                  <span>Peinado de Evento</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Step 2: Date and Time -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fecha" class="form-label">2. Fecha preferida</label>
+                <input type="date" id="fecha" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label for="hora" class="form-label">Horario disponible</label>
+                <select id="hora" class="form-input" required>
+                  <option value="">Selecciona hora...</option>
+                  <option value="10:00">10:00 h</option>
+                  <option value="11:30">11:30 h</option>
+                  <option value="13:00">13:00 h</option>
+                  <option value="16:00">16:00 h</option>
+                  <option value="17:30">17:30 h</option>
+                  <option value="19:00">19:00 h</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Step 3: Client Info -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombre" class="form-label">3. Nombre completo</label>
+                <input type="text" id="nombre" class="form-input" placeholder="Tu nombre" required>
+              </div>
+              <div class="form-group">
+                <label for="telefono" class="form-label">Teléfono de contacto</label>
+                <input type="tel" id="telefono" class="form-input" placeholder="+34 600 000 000" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="notas" class="form-label">Notas adicionales (opcional)</label>
+              <textarea id="notas" class="form-input" rows="3" placeholder="Indícanos si tienes preferencias especiales o tipo de cabello..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary btn-submit">Confirmar Reserva</button>
+            <div id="form-message" class="form-message" aria-live="polite"></div>
+
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Contacto -->
+    <section id="contacto" class="section-contacto">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <span class="section-subtitle">Encuéntranos</span>
+          <h2 class="section-title">Visita Nuestro Espacio</h2>
+        </div>
+
+        <div class="contacto-grid">
+          <!-- Info Column -->
+          <div class="contacto-info scroll-reveal">
+            <div class="info-item">
+              <h3 class="info-title">Ubicación</h3>
+              <p class="info-text">Calle Velázquez 48, Barrio de Salamanca<br>28001 Madrid, España</p>
+            </div>
+
+            <div class="info-item">
+              <h3 class="info-title">Horario de Atención</h3>
+              <p class="info-text">Lunes a Viernes: 10:00 – 20:00 h<br>Sábados: 09:30 – 19:00 h<br>Domingos: Cerrado</p>
+            </div>
+
+            <div class="info-item">
+              <h3 class="info-title">Contacto Directo</h3>
+              <p class="info-text">Teléfono: <a href="tel:+34912345678" class="text-link">+34 912 345 678</a><br>Email: <a href="mailto:hola@stylo.es" class="text-link">hola@stylo.es</a></p>
+            </div>
+
+            <div class="info-item">
+              <h3 class="info-title">Redes Sociales</h3>
+              <p class="info-text">
+                <a href="#" class="text-link" target="_blank" rel="noopener">Instagram</a> &nbsp;/&nbsp; 
+                <a href="#" class="text-link" target="_blank" rel="noopener">Pinterest</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Quick Message Form -->
+          <div class="contacto-form-card scroll-reveal">
+            <h3 class="card-title">Envíanos un Mensaje</h3>
+            <form id="contact-form" class="contacto-form" onsubmit="return false;">
+              <div class="form-group">
+                <label for="c-nombre" class="form-label">Nombre</label>
+                <input type="text" id="c-nombre" class="form-input" placeholder="Tu nombre" required>
+              </div>
+              <div class="form-group">
+                <label for="c-email" class="form-label">Correo electrónico</label>
+                <input type="email" id="c-email" class="form-input" placeholder="tu@email.com" required>
+              </div>
+              <div class="form-group">
+                <label for="c-mensaje" class="form-label">Mensaje</label>
+                <textarea id="c-mensaje" class="form-input" rows="4" placeholder="¿En qué podemos ayudarte?" required></textarea>
+              </div>
+              <button type="submit" class="btn-primary">Enviar Mensaje</button>
+              <div id="c-form-message" class="form-message" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="#" class="brand">Stylo</a>
+        <p class="footer-tagline">Tu espacio ideal para el cambio.</p>
+      </div>
+      <div class="footer-copy">
+        <p>&copy; 2026 Stylo Peluquería. Todos los derechos reservados.</p>
+      </div>
+      <div class="footer-top">
+        <a href="#" class="nav-link">&uarr; Volver arriba</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script for IntersectionObserver & Form Interactivity -->
+  <script src="script.js"></script>
+</body>
+</html>
