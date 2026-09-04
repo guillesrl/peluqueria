@@ -309,7 +309,7 @@ html, body {
    Section Common Headers & Transitions
    -------------------------------------------------------------------------- */
 .section-header {
-  margin-bottom: clamp(40px, 6vw, 64px);
+  margin-bottom: clamp(18px, 2.5vw, 28px);
   text-align: left;
 }
 
@@ -317,15 +317,15 @@ html, body {
   display: block;
   font-family: 'Newsreader', serif;
   font-style: italic;
-  font-size: clamp(20px, 2.2vw, 28px);
+  font-size: clamp(18px, 2vw, 24px);
   font-weight: 400;
   color: #E5C158;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .section-title {
   font-family: 'Instrument Sans', sans-serif;
-  font-size: clamp(36px, 4.5vw, 58px);
+  font-size: clamp(32px, 4vw, 52px);
   font-weight: 600;
   letter-spacing: -0.01em;
   color: #ECE8DD;
@@ -338,7 +338,7 @@ html, body {
   position: relative;
   z-index: 10;
   margin-top: -380px;
-  padding: clamp(60px, 8vh, 100px) clamp(22px, 5vw, 96px) clamp(80px, 10vh, 130px);
+  padding: clamp(44px, 6vh, 72px) clamp(22px, 5vw, 96px) clamp(60px, 8vh, 96px);
   background: linear-gradient(180deg, transparent 0%, rgba(18, 19, 22, 0.75) 20%, rgba(18, 19, 22, 0.95) 40%, #16181D 100%);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -347,7 +347,8 @@ html, body {
 .services-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: clamp(20px, 3vw, 32px);
+  gap: clamp(16px, 2.5vw, 24px);
+  max-width: 980px;
 }
 
 .service-card {
@@ -356,7 +357,7 @@ html, body {
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(212, 175, 55, 0.22);
   border-radius: 6px;
-  padding: clamp(28px, 3.5vw, 40px);
+  padding: clamp(22px, 2.8vw, 32px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -373,7 +374,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .service-price {
@@ -396,14 +397,14 @@ html, body {
   font-size: clamp(22px, 2.2vw, 28px);
   font-weight: 600;
   color: #ECE8DD;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .service-desc {
   font-size: 15px;
   line-height: 1.55;
   color: #C5BFB0;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .service-link {
@@ -423,36 +424,37 @@ html, body {
    Section 2: Reserva (Gradient Charcoal #16181D -> #1A1C22)
    -------------------------------------------------------------------------- */
 .section-reserva {
-  padding: clamp(80px, 10vh, 130px) clamp(22px, 5vw, 96px);
+  padding: clamp(40px, 5vh, 60px) clamp(22px, 5vw, 96px);
   background: linear-gradient(180deg, #16181D 0%, #1A1C22 100%);
 }
 
 .reserva-card {
-  max-width: 800px;
+  width: 100%;
+  max-width: 580px;
   background: rgba(25, 27, 33, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(212, 175, 55, 0.22);
   border-radius: 6px;
-  padding: clamp(32px, 5vw, 56px);
+  padding: clamp(20px, 2.5vw, 28px);
 }
 
 .reserva-form {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 12px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 7px;
 }
 
 .form-row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  gap: 12px;
 }
 
 .form-label {
@@ -466,7 +468,7 @@ html, body {
 .service-pills {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 6px;
 }
 
 .pill-option {
@@ -479,9 +481,9 @@ html, body {
 
 .pill-option span {
   display: inline-block;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  padding: 10px 20px;
+  padding: 7px 12px;
   border-radius: 6px;
   border: 1px solid rgba(212, 175, 55, 0.3);
   background: rgba(35, 38, 46, 0.6);
@@ -499,13 +501,18 @@ html, body {
 
 .form-input {
   font-family: 'Instrument Sans', sans-serif;
-  font-size: 15px;
-  padding: 14px 18px;
+  font-size: 14px;
+  padding: 8px 12px;
   border-radius: 6px;
   border: 1px solid rgba(212, 175, 55, 0.25);
   background: rgba(30, 33, 40, 0.85);
   color: #ECE8DD;
   transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+textarea.form-input {
+  min-height: 72px;
+  line-height: 1.35;
 }
 
 .form-input:focus {
@@ -517,7 +524,7 @@ html, body {
 
 .btn-submit {
   align-self: flex-start;
-  margin-top: 8px;
+  margin-top: 2px;
 }
 
 .form-message {
@@ -525,14 +532,14 @@ html, body {
   font-weight: 500;
   color: #E5C158;
   min-height: 20px;
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
 /* --------------------------------------------------------------------------
    Section 3: Contacto (Gradient Charcoal #1A1C22 -> #141519)
    -------------------------------------------------------------------------- */
 .section-contacto {
-  padding: clamp(80px, 10vh, 130px) clamp(22px, 5vw, 96px);
+  padding: clamp(56px, 7vh, 88px) clamp(22px, 5vw, 96px);
   background: linear-gradient(180deg, #1A1C22 0%, #141519 100%);
 }
 
@@ -545,12 +552,12 @@ html, body {
 .contacto-info {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 24px;
 }
 
 .info-item {
   border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-  padding-bottom: 20px;
+  padding-bottom: 14px;
 }
 
 .info-title {
@@ -579,25 +586,27 @@ html, body {
 }
 
 .contacto-form-card {
+  width: 100%;
+  max-width: 620px;
   background: rgba(25, 27, 33, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(212, 175, 55, 0.22);
   border-radius: 6px;
-  padding: clamp(28px, 4vw, 44px);
+  padding: clamp(24px, 3vw, 34px);
 }
 
 .card-title {
   font-size: 22px;
   font-weight: 600;
   color: #ECE8DD;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .contacto-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 14px;
 }
 
 /* --------------------------------------------------------------------------
