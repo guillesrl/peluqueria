@@ -66,8 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         renderW = ch * imgRatio;
         renderH = ch;
-        // Shift focal alignment slightly right (65%) to frame the model nicely
-        offsetX = (cw - renderW) * 0.65;
+        // Keep the desktop framing and center the model a little more on mobile.
+        const focalPosition = window.matchMedia('(max-width: 760px)').matches ? 0.72 : 0.65;
+        offsetX = (cw - renderW) * focalPosition;
         offsetY = 0;
       }
 
