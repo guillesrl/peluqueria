@@ -731,6 +731,29 @@ html, body {
     grid-template-columns: 1fr;
   }
 
+  .section-reserva {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .section-reserva .section-header {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .reserva-card {
+    max-width: none;
+    padding: 0;
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .calcom-booking {
+    border-radius: 0;
+  }
+
   .contacto-intro {
     padding-left: 16px;
   }
