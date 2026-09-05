@@ -44,15 +44,19 @@ html, body {
    Header & Navigation (Positioned Above Hero Media)
    -------------------------------------------------------------------------- */
 .header {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: clamp(20px, 3.5vw, 36px) clamp(22px, 5vw, 96px);
-  background-color: #121316;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+  background-color: rgba(18, 19, 22, 0.46);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+  -webkit-backdrop-filter: blur(14px) saturate(115%);
+  backdrop-filter: blur(14px) saturate(115%);
 }
 
 .brand {
