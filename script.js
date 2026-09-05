@@ -156,49 +156,4 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => revealObserver.observe(el));
   }
 
-  // Set default reservation date to tomorrow
-  const fechaInput = document.getElementById('fecha');
-  if (fechaInput) {
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    fechaInput.value = tomorrow.toISOString().split('T')[0];
-    fechaInput.min = new Date().toISOString().split('T')[0];
-  }
-
-  // 3. Reservation Form Submission Handler
-  const reservaForm = document.getElementById('reserva-form');
-  const formMessage = document.getElementById('form-message');
-
-  if (reservaForm && formMessage) {
-    reservaForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      const nombre = document.getElementById('nombre').value;
-      const fecha = document.getElementById('fecha').value;
-      const hora = document.getElementById('hora').value;
-
-      formMessage.style.color = '#222222';
-      formMessage.innerHTML = `✨ <strong>¡Reserva confirmada, ${nombre}!</strong> Te esperamos el ${fecha} a las ${hora} h. Recibirás un recordatorio por WhatsApp.`;
-
-      // Reset fields except date
-      document.getElementById('nombre').value = '';
-      document.getElementById('telefono').value = '';
-      document.getElementById('notas').value = '';
-    });
-  }
-
-  // 4. Quick Contact Form Handler
-  const contactForm = document.getElementById('contact-form');
-  const cFormMessage = document.getElementById('c-form-message');
-
-  if (contactForm && cFormMessage) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      cFormMessage.style.color = '#222222';
-      cFormMessage.innerHTML = `✨ <strong>¡Gracias por tu mensaje!</strong> Responderemos a tu consulta a la brevedad.`;
-
-      contactForm.reset();
-    });
-  }
 });

@@ -73,8 +73,7 @@ html, body {
 
 .brand:focus-visible,
 .nav-link:focus-visible,
-.btn-primary:focus-visible,
-.form-input:focus-visible {
+.btn-primary:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 4px;
   border-radius: 4px;
@@ -117,6 +116,38 @@ html, body {
 .nav-link:hover::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: clamp(18px, 3vw, 32px);
+  bottom: clamp(18px, 3vw, 32px);
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #081B11;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 18px rgba(37, 211, 102, 0.24);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.42), 0 0 24px rgba(37, 211, 102, 0.34);
+}
+
+.whatsapp-float:focus-visible {
+  outline: 2px solid #ECE8DD;
+  outline-offset: 4px;
+}
+
+.whatsapp-float svg {
+  width: 29px;
+  height: 29px;
+  fill: currentColor;
 }
 
 /* --------------------------------------------------------------------------
@@ -439,100 +470,39 @@ html, body {
   padding: clamp(20px, 2.5vw, 28px);
 }
 
-.reserva-form {
+.calcom-placeholder {
+  min-height: 220px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-}
-
-.form-label {
-  font-family: 'Instrument Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  color: #E5C158;
-}
-
-.service-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.pill-option {
-  cursor: pointer;
-}
-
-.pill-option input[type="radio"] {
-  display: none;
-}
-
-.pill-option span {
-  display: inline-block;
-  font-size: 13px;
-  font-weight: 500;
-  padding: 7px 12px;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px;
+  border: 1px dashed rgba(212, 175, 55, 0.38);
   border-radius: 6px;
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  background: rgba(35, 38, 46, 0.6);
-  color: #ECE8DD;
-  transition: all 0.25s ease;
+  background: rgba(30, 33, 40, 0.5);
+  text-align: center;
 }
 
-.pill-option input[type="radio"]:checked + span {
-  background: linear-gradient(135deg, #E5C158 0%, #D4AF37 60%, #AA771C 100%);
-  color: #0E0F12;
+.calcom-eyebrow {
+  color: #E5C158;
+  font-size: 12px;
   font-weight: 700;
-  border-color: #E5C158;
-  box-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.form-input {
-  font-family: 'Instrument Sans', sans-serif;
-  font-size: 14px;
-  padding: 8px 12px;
-  border-radius: 6px;
-  border: 1px solid rgba(212, 175, 55, 0.25);
-  background: rgba(30, 33, 40, 0.85);
+.calcom-title {
   color: #ECE8DD;
-  transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  font-size: 24px;
+  font-weight: 600;
 }
 
-textarea.form-input {
-  min-height: 72px;
-  line-height: 1.35;
-}
-
-.form-input:focus {
-  border-color: #E5C158;
-  background: rgba(35, 38, 46, 0.95);
-  box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
-  outline: none;
-}
-
-.btn-submit {
-  align-self: flex-start;
-  margin-top: 2px;
-}
-
-.form-message {
+.calcom-description {
+  max-width: 38ch;
+  margin: 0 auto;
+  color: #B8B3A4;
   font-size: 14px;
-  font-weight: 500;
-  color: #E5C158;
-  min-height: 20px;
-  margin-top: 4px;
+  line-height: 1.5;
 }
 
 /* --------------------------------------------------------------------------
@@ -544,9 +514,7 @@ textarea.form-input {
 }
 
 .contacto-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: clamp(32px, 5vw, 64px);
+  max-width: 720px;
 }
 
 .contacto-info {
@@ -583,30 +551,6 @@ textarea.form-input {
 
 .text-link:hover {
   opacity: 0.8;
-}
-
-.contacto-form-card {
-  width: 100%;
-  max-width: 620px;
-  background: rgba(25, 27, 33, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(212, 175, 55, 0.22);
-  border-radius: 6px;
-  padding: clamp(24px, 3vw, 34px);
-}
-
-.card-title {
-  font-size: 22px;
-  font-weight: 600;
-  color: #ECE8DD;
-  margin-bottom: 16px;
-}
-
-.contacto-form {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
 }
 
 /* --------------------------------------------------------------------------
@@ -748,10 +692,6 @@ textarea.form-input {
   .hero-footer {
     left: 22px;
     bottom: 20px;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
   }
 
   .footer-content {

@@ -26,6 +26,12 @@
     </nav>
   </header>
 
+  <a class="whatsapp-float" href="https://wa.me/376378869" target="_blank" rel="noopener" aria-label="Abrir WhatsApp de Stylo">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.1 1.6 5.8L.2 24l6.5-1.7a11.8 11.8 0 0 0 5.4 1.3h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.3-6.1-3.5-8.3ZM12.2 21.6h-.1c-1.7 0-3.4-.5-4.9-1.3l-.3-.2-3.9 1 1-3.8-.2-.3a9.7 9.7 0 0 1-1.5-5.2C2.3 6.5 6.7 2 12.1 2c2.6 0 5 1 6.8 2.8a9.7 9.7 0 0 1 2.8 6.9c0 5.4-4.3 9.9-9.5 9.9Zm5.4-7.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.6-1.8-1.8-2.1-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.5 0-.7-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.6 0 1.5 1.1 3 1.2 3.2.2.2 2.2 3.4 5.3 4.7.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.4Z"/>
+    </svg>
+  </a>
+
   <main>
     <!-- Standalone Audiovisual Hero Section -->
     <section class="hero" aria-label="Sección Principal Stylo">
@@ -141,72 +147,12 @@
         </div>
 
         <div class="reserva-card scroll-reveal">
-          <form id="reserva-form" class="reserva-form" onsubmit="return false;">
-            
-            <!-- Step 1: Select Service -->
-            <div class="form-group">
-              <label class="form-label">1. Selecciona el servicio</label>
-              <div class="service-pills">
-                <label class="pill-option">
-                  <input type="radio" name="servicio" value="color" checked>
-                  <span>Coloración & Balayage</span>
-                </label>
-                <label class="pill-option">
-                  <input type="radio" name="servicio" value="corte">
-                  <span>Corte & Styling</span>
-                </label>
-                <label class="pill-option">
-                  <input type="radio" name="servicio" value="tratamiento">
-                  <span>Tratamiento Capilar</span>
-                </label>
-                <label class="pill-option">
-                  <input type="radio" name="servicio" value="evento">
-                  <span>Peinado de Evento</span>
-                </label>
-              </div>
-            </div>
-
-            <!-- Step 2: Date and Time -->
-            <div class="form-row">
-              <div class="form-group">
-                <label for="fecha" class="form-label">2. Fecha preferida</label>
-                <input type="date" id="fecha" class="form-input" required>
-              </div>
-              <div class="form-group">
-                <label for="hora" class="form-label">Horario disponible</label>
-                <select id="hora" class="form-input" required>
-                  <option value="">Selecciona hora...</option>
-                  <option value="10:00">10:00 h</option>
-                  <option value="11:30">11:30 h</option>
-                  <option value="13:00">13:00 h</option>
-                  <option value="16:00">16:00 h</option>
-                  <option value="17:30">17:30 h</option>
-                  <option value="19:00">19:00 h</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- Step 3: Client Info -->
-            <div class="form-row">
-              <div class="form-group">
-                <label for="nombre" class="form-label">3. Nombre completo</label>
-                <input type="text" id="nombre" class="form-input" placeholder="Tu nombre" required>
-              </div>
-              <div class="form-group">
-                <label for="telefono" class="form-label">Teléfono de contacto</label>
-                <input type="tel" id="telefono" class="form-input" placeholder="+34 600 000 000" required>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="notas" class="form-label">Notas adicionales (opcional)</label>
-              <textarea id="notas" class="form-input" rows="3" placeholder="Indícanos si tienes preferencias especiales o tipo de cabello..."></textarea>
-            </div>
-
-            <button type="submit" class="btn-primary btn-submit">Confirmar Reserva</button>
-            <div id="form-message" class="form-message" aria-live="polite"></div>
-
-          </form>
+          <!-- Cal.com widget placeholder: se reemplazará cuando se facilite el enlace o widget. -->
+          <div id="calcom-booking" class="calcom-placeholder" aria-label="Calendario de reservas">
+            <span class="calcom-eyebrow">Reserva online</span>
+            <h3 class="calcom-title">Elige el momento perfecto</h3>
+            <p class="calcom-description">El calendario de Cal.com estará disponible aquí muy pronto.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -234,7 +180,7 @@
 
             <div class="info-item">
               <h3 class="info-title">Contacto Directo</h3>
-              <p class="info-text">Teléfono: <a href="tel:+34912345678" class="text-link">+34 912 345 678</a><br>Email: <a href="mailto:hola@stylo.es" class="text-link">hola@stylo.es</a></p>
+              <p class="info-text">WhatsApp: <a href="https://wa.me/376378869" class="text-link" target="_blank" rel="noopener">+376 378 869</a><br>Email: <a href="mailto:hola@stylo.es" class="text-link">hola@stylo.es</a></p>
             </div>
 
             <div class="info-item">
@@ -244,27 +190,6 @@
                 <a href="#" class="text-link" target="_blank" rel="noopener">Pinterest</a>
               </p>
             </div>
-          </div>
-
-          <!-- Quick Message Form -->
-          <div class="contacto-form-card scroll-reveal">
-            <h3 class="card-title">Envíanos un Mensaje</h3>
-            <form id="contact-form" class="contacto-form" onsubmit="return false;">
-              <div class="form-group">
-                <label for="c-nombre" class="form-label">Nombre</label>
-                <input type="text" id="c-nombre" class="form-input" placeholder="Tu nombre" required>
-              </div>
-              <div class="form-group">
-                <label for="c-email" class="form-label">Correo electrónico</label>
-                <input type="email" id="c-email" class="form-input" placeholder="tu@email.com" required>
-              </div>
-              <div class="form-group">
-                <label for="c-mensaje" class="form-label">Mensaje</label>
-                <textarea id="c-mensaje" class="form-input" rows="4" placeholder="¿En qué podemos ayudarte?" required></textarea>
-              </div>
-              <button type="submit" class="btn-primary">Enviar Mensaje</button>
-              <div id="c-form-message" class="form-message" aria-live="polite"></div>
-            </form>
           </div>
         </div>
       </div>
