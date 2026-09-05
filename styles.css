@@ -92,6 +92,7 @@ html, body {
   font-weight: 500;
   font-size: 15px;
   color: #D4AF37;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
   text-decoration: none;
   position: relative;
   transition: opacity 0.25s ease, color 0.25s ease;
