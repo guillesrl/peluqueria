@@ -463,6 +463,19 @@ html, body {
   background: linear-gradient(180deg, #16181D 0%, #1A1C22 100%);
 }
 
+.reserva-visual {
+  width: min(100%, 460px);
+  margin: 0 auto clamp(28px, 4vw, 44px);
+}
+
+.reserva-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: 6px;
+}
+
 .reserva-card {
   width: 100%;
   max-width: 980px;
