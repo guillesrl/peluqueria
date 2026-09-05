@@ -66,8 +66,18 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         renderW = ch * imgRatio;
         renderH = ch;
-        // Keep the desktop framing and center the model a little more on mobile.
-        const focalPosition = window.matchMedia('(max-width: 760px)').matches ? 0.72 : 0.65;
+        // Follow the model's horizontal movement through the frame sequence on mobile.
+        const isMobile = window.matchMedia('(max-width: 760px)').matches;
+        let focalPosition = 0.65;
+        if (isMobile) {
+          if (index < 30) {
+            focalPosition = 0.90 - (index / 30) * 0.18;
+          } else if (index < 60) {
+            focalPosition = 0.72 - ((index - 30) / 30) * 0.21;
+          } else {
+            focalPosition = 0.51;
+          }
+        }
         offsetX = (cw - renderW) * focalPosition;
         offsetY = 0;
       }
