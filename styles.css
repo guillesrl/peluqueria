@@ -463,6 +463,10 @@ html, body {
   background: linear-gradient(180deg, #16181D 0%, #1A1C22 100%);
 }
 
+.section-reserva .section-header {
+  scroll-margin-top: 96px;
+}
+
 .reserva-visual {
   width: min(100%, 460px);
   margin: 0 auto clamp(28px, 4vw, 44px);
