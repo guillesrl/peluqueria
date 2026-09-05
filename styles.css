@@ -734,6 +734,7 @@ html, body {
   .section-reserva {
     padding-left: 0;
     padding-right: 0;
+    padding-bottom: 32px;
   }
 
   .section-reserva .section-header {
@@ -751,6 +752,7 @@ html, body {
   }
 
   .calcom-booking {
+    height: 800px;
     border-radius: 0;
   }
 
