@@ -53,7 +53,7 @@ html, body {
   align-items: center;
   justify-content: space-between;
   padding: clamp(20px, 3.5vw, 36px) clamp(22px, 5vw, 96px);
-  background-color: rgba(18, 19, 22, 0.24);
+  background-color: rgba(18, 19, 22, 0.14);
   border-bottom: 1px solid rgba(212, 175, 55, 0.18);
   -webkit-backdrop-filter: blur(14px) saturate(115%);
   backdrop-filter: blur(14px) saturate(115%);
