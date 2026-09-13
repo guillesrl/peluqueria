@@ -67,7 +67,9 @@ export default async function handler(req, res) {
   const phoneNumber = phoneNumberValue ?? phone_number;
   const timeZone = timeZoneValue ?? time_zone ?? DEFAULT_TIME_ZONE;
   const eventTypeId = eventTypeIdValue ?? event_type_id;
-  const eventTypeSlug = eventTypeSlugValue ?? event_type_slug ?? "peinados";
+  // Never guess the service. A missing slug must fail instead of silently
+  // creating a booking for an unrelated event type.
+  const eventTypeSlug = eventTypeSlugValue ?? event_type_slug;
   const lengthInMinutes = lengthInMinutesValue ?? length_in_minutes;
 
   const missing = [];
