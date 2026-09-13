@@ -76,6 +76,7 @@ export default async function handler(req, res) {
   if (!isValidIsoDate(start)) missing.push("start");
   if (typeof name !== "string" || !name.trim()) missing.push("name");
   if (!isValidEmail(email)) missing.push("email");
+  if (typeof phoneNumber !== "string" || !phoneNumber.trim()) missing.push("phoneNumber");
   if (!eventTypeId && !eventTypeSlug) missing.push("eventTypeSlug or eventTypeId");
 
   if (missing.length) {
