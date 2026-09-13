@@ -493,7 +493,8 @@ html, body {
 
 .calcom-booking {
   width: 100%;
-  height: 900px;
+  height: auto;
+  min-height: 0;
   overflow: visible;
   border-radius: 6px;
 }
@@ -507,51 +508,7 @@ html, body {
 }
 
 .contacto-grid {
-  max-width: 980px;
-  display: grid;
-  grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
-  gap: clamp(32px, 6vw, 72px);
-  align-items: start;
-}
-
-.contacto-intro {
-  padding: 8px 0 8px 22px;
-  border-left: 1px solid rgba(212, 175, 55, 0.45);
-}
-
-.contacto-kicker {
-  display: block;
-  margin-bottom: 16px;
-  color: #E5C158;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.contacto-lead {
-  max-width: 18ch;
-  margin-bottom: 24px;
-  color: #ECE8DD;
-  font-family: 'Newsreader', serif;
-  font-size: clamp(26px, 3vw, 38px);
-  line-height: 1.08;
-}
-
-.contacto-whatsapp {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: #E5C158;
-  font-size: 14px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: color 0.25s ease, gap 0.25s ease;
-}
-
-.contacto-whatsapp:hover {
-  gap: 12px;
-  color: #F3E5AB;
+  max-width: 760px;
 }
 
 .contacto-info {
@@ -561,8 +518,8 @@ html, body {
 }
 
 .info-item {
-  min-height: 132px;
-  padding: 18px;
+  min-height: 116px;
+  padding: 14px 16px;
   border: 1px solid rgba(212, 175, 55, 0.2);
   border-radius: 6px;
   background: rgba(25, 27, 33, 0.5);
@@ -675,6 +632,23 @@ html, body {
   transform: translateY(0);
 }
 
+/* Compact booking layout on desktop */
+@media (min-width: 1025px) {
+  .section-reserva {
+    padding-top: 0;
+    padding-bottom: 24px;
+  }
+
+  .section-reserva .section-header {
+    margin-bottom: 14px;
+  }
+
+  .section-reserva .reserva-card {
+    margin-top: 0;
+    padding: 4px;
+  }
+}
+
 /* --------------------------------------------------------------------------
    Responsive Layout (Tablet & Mobile)
    -------------------------------------------------------------------------- */
@@ -683,9 +657,6 @@ html, body {
     grid-template-columns: 1fr;
   }
 
-  .contacto-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 760px) {
@@ -769,12 +740,7 @@ html, body {
   }
 
   .calcom-booking {
-    height: 1000px;
     border-radius: 0;
-  }
-
-  .contacto-intro {
-    padding-left: 16px;
   }
 
   .footer-content {
