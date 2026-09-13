@@ -76,12 +76,28 @@ Para cambiar la secuencia visual del hero, sustituye los archivos de `media/fram
 
 ## Formularios
 
-Actualmente los formularios de reserva y contacto funcionan únicamente en el navegador:
+La función serverless `api/bookings.js` permite crear reservas de Cal.com sin exponer la API key al navegador:
 
-- La reserva muestra un mensaje de confirmación y limpia los datos del cliente.
-- El formulario de contacto muestra un mensaje de agradecimiento y se reinicia.
+- Recibe `start`, `name`, `email` y, opcionalmente, `phoneNumber`, `timeZone`, `notes` y `lengthInMinutes`.
+- Construye el objeto `attendee` requerido por Cal.com.
+- Usa `eventTypeSlug=peinados` y `username=peluqueriaa` por defecto.
+- Requiere configurar `CAL_API_KEY` como variable de entorno en el hosting.
 
-No existe todavía persistencia, envío de email, integración con WhatsApp ni conexión con un sistema de reservas. Para producción, hay que reemplazar los handlers de `script.js` por una API o servicio externo y evitar mostrar una reserva como confirmada antes de recibir respuesta del servidor.
+Ejemplo de petición:
+
+```bash
+curl -X POST https://TU-DOMINIO/api/bookings \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "start": "2026-09-15T10:00:00Z",
+    "name": "Nombre del cliente",
+    "email": "cliente@example.com",
+    "phoneNumber": "+376600000",
+    "timeZone": "Europe/Andorra"
+  }'
+```
+
+Los formularios de reserva y contacto del sitio siguen funcionando únicamente en el navegador hasta conectarlos a este endpoint.
 
 ## Despliegue
 

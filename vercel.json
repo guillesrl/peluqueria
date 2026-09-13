@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/bookings.js": {
+      "maxDuration": 10
+    }
+  }
+}
