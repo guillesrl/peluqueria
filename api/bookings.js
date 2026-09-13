@@ -1,5 +1,5 @@
 const CAL_API_URL = "https://api.cal.com/v2/bookings";
-const CAL_API_VERSION = "2024-09-04";
+const CAL_API_VERSION = "2026-02-25";
 const DEFAULT_TIME_ZONE = "Europe/Andorra";
 
 function sendJson(res, status, body) {
