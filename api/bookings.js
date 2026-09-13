@@ -49,15 +49,26 @@ export default async function handler(req, res) {
     start,
     name,
     email,
-    phoneNumber,
-    timeZone = DEFAULT_TIME_ZONE,
+    phoneNumber: phoneNumberValue,
+    phone_number,
+    timeZone: timeZoneValue,
+    time_zone,
     language = "es",
-    eventTypeId,
-    eventTypeSlug = "peinados",
+    eventTypeId: eventTypeIdValue,
+    event_type_id,
+    eventTypeSlug: eventTypeSlugValue,
+    event_type_slug,
     username = "peluqueriaa",
-    lengthInMinutes,
+    lengthInMinutes: lengthInMinutesValue,
+    length_in_minutes,
     notes,
   } = body;
+
+  const phoneNumber = phoneNumberValue ?? phone_number;
+  const timeZone = timeZoneValue ?? time_zone ?? DEFAULT_TIME_ZONE;
+  const eventTypeId = eventTypeIdValue ?? event_type_id;
+  const eventTypeSlug = eventTypeSlugValue ?? event_type_slug ?? "peinados";
+  const lengthInMinutes = lengthInMinutesValue ?? length_in_minutes;
 
   const missing = [];
   if (!isValidIsoDate(start)) missing.push("start");
