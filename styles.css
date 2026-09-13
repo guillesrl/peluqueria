@@ -546,18 +546,18 @@ html, body {
 }
 
 .contacto-grid {
-  max-width: 760px;
+  max-width: 980px;
 }
 
 .contacto-info {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
 }
 
 .info-item {
-  min-height: 116px;
-  padding: 14px 16px;
+  min-height: 96px;
+  padding: 12px 14px;
   border: 1px solid rgba(212, 175, 55, 0.2);
   border-radius: 6px;
   background: rgba(25, 27, 33, 0.5);
@@ -568,12 +568,12 @@ html, body {
   font-size: 18px;
   font-weight: 600;
   color: #E5C158;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .info-text {
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.45;
   color: #C5BFB0;
 }
 
@@ -586,6 +586,48 @@ html, body {
 
 .text-link:hover {
   opacity: 0.8;
+}
+
+.contacto-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.social-link {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  color: #E5C158;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.social-link:hover {
+  color: #F3E5AB;
+  transform: translateY(-2px);
+}
+
+.social-link svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+.social-link:last-child svg path {
+  fill: currentColor;
+  stroke: none;
 }
 
 /* --------------------------------------------------------------------------
@@ -699,6 +741,10 @@ html, body {
 @media (max-width: 1024px) {
   .services-grid {
     grid-template-columns: 1fr;
+  }
+
+  .contacto-info {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
 }
