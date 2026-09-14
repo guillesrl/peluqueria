@@ -76,24 +76,28 @@ Para cambiar la secuencia visual del hero, sustituye los archivos de `media/fram
 
 ## Formularios
 
-La función serverless `api/bookings.js` permite crear reservas de Cal.com sin exponer la API key al navegador:
+La función serverless `api/bookings.js` permite crear reservas de Cal.com sin exponer la API key al navegador. El endpoint está protegido con un secreto compartido entre OpenLivery y Vercel:
 
-- Recibe `start`, `name`, `email` y, opcionalmente, `phoneNumber`, `timeZone`, `notes` y `lengthInMinutes`.
+- Requiere la cabecera `Authorization: Bearer <OPENLIVERY_BOOKING_SECRET>`.
+- Recibe `start`, `name`, `email`, `phoneNumber`, `eventTypeSlug`/`event_type_slug` y `username`.
 - Construye el objeto `attendee` requerido por Cal.com.
-- Usa `eventTypeSlug=peinados` y `username=peluqueriaa` por defecto.
-- Requiere configurar `CAL_API_KEY` como variable de entorno en el hosting.
+- No adivina el servicio: el slug debe corresponder al evento solicitado.
+- Requiere configurar `CAL_API_KEY` y `OPENLIVERY_BOOKING_SECRET` como variables de entorno en el hosting.
 
 Ejemplo de petición:
 
 ```bash
 curl -X POST https://TU-DOMINIO/api/bookings \
   -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer TU_SECRETO' \
   -d '{
     "start": "2026-09-15T10:00:00Z",
     "name": "Nombre del cliente",
     "email": "cliente@example.com",
     "phoneNumber": "+376600000",
-    "timeZone": "Europe/Andorra"
+    "timeZone": "Europe/Andorra",
+    "eventTypeSlug": "color",
+    "username": "peluqueriaa"
   }'
 ```
 
