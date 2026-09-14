@@ -1,6 +1,7 @@
 const CAL_API_URL = "https://api.cal.com/v2/bookings";
 const CAL_API_VERSION = "2026-02-25";
 const DEFAULT_TIME_ZONE = "Europe/Andorra";
+const OPENLIVERY_BOOKING_SECRET = process.env.OPENLIVERY_BOOKING_SECRET;
 
 function sendJson(res, status, body) {
   res.statusCode = status;
@@ -40,6 +41,14 @@ export default async function handler(req, res) {
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST, OPTIONS");
     return sendJson(res, 405, { error: "Method not allowed" });
+  }
+
+  const authorization = req.headers.authorization;
+  if (
+    !OPENLIVERY_BOOKING_SECRET ||
+    authorization !== `Bearer ${OPENLIVERY_BOOKING_SECRET}`
+  ) {
+    return sendJson(res, 401, { error: "Unauthorized" });
   }
 
   const body = getBody(req);
