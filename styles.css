@@ -853,3 +853,112 @@ html, body {
     animation: none !important;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Emil polish layer: tactile states, depth and restrained pointer ambience
+   -------------------------------------------------------------------------- */
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.header {
+  transition: background-color 240ms ease, border-color 240ms ease, backdrop-filter 240ms ease;
+}
+
+.header.is-scrolled {
+  background-color: rgba(18, 19, 22, 0.78);
+  border-bottom-color: rgba(229, 193, 88, 0.32);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.starfield::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle 220px at var(--pointer-x, 50%) var(--pointer-y, 20%), rgba(229, 193, 88, 0.11), transparent 72%);
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+body.is-pointer-ready .starfield::before { opacity: 1; }
+
+.btn-primary {
+  transition: transform 160ms var(--ease-out), box-shadow 220ms ease, background 220ms ease, border-color 220ms ease;
+}
+
+.btn-primary:active,
+.whatsapp-float:active,
+.social-link:active { transform: scale(0.97); }
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 300ms var(--ease-out), border-color 240ms ease, box-shadow 300ms ease, background-color 240ms ease;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #E5C158, transparent);
+  transform: scaleX(0.2);
+  opacity: 0;
+  transition: transform 400ms var(--ease-out), opacity 240ms ease;
+}
+
+.service-card:hover::before,
+.service-card:focus-within::before {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.service-card:focus-within {
+  border-color: rgba(229, 193, 88, 0.55);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 180ms ease, color 180ms ease, gap 240ms var(--ease-out);
+}
+
+.service-link:hover { gap: 13px; }
+
+.services-grid .service-card:nth-child(2):not(.is-visible) { transition-delay: 60ms; }
+.services-grid .service-card:nth-child(3):not(.is-visible) { transition-delay: 120ms; }
+.services-grid .service-card:nth-child(4):not(.is-visible) { transition-delay: 180ms; }
+.services-grid .service-card.is-visible { transition-delay: 0ms; }
+
+.reserva-visual {
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.reserva-visual img {
+  transition: transform 600ms var(--ease-out), filter 600ms ease;
+}
+
+.reserva-visual:hover img {
+  transform: scale(1.025);
+  filter: saturate(1.08) contrast(1.02);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .starfield::before,
+  .service-card,
+  .service-card::before,
+  .service-link,
+  .reserva-visual img,
+  .btn-primary,
+  .whatsapp-float,
+  .social-link,
+  .header { transition: none !important; }
+  .service-card:hover,
+  .reserva-visual:hover img { transform: none; }
+}

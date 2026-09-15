@@ -3,6 +3,23 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Ambient pointer light: decorative only on precise pointers.
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    window.addEventListener('pointermove', (event) => {
+      document.documentElement.style.setProperty('--pointer-x', `${event.clientX}px`);
+      document.documentElement.style.setProperty('--pointer-y', `${event.clientY}px`);
+      document.body.classList.add('is-pointer-ready');
+    }, { passive: true });
+  }
+
+  // Add a restrained glass treatment once the hero is left.
+  const header = document.querySelector('.header');
+  if (header) {
+    const updateHeaderState = () => header.classList.toggle('is-scrolled', window.scrollY > 24);
+    updateHeaderState();
+    window.addEventListener('scroll', updateHeaderState, { passive: true });
+  }
+
   // 1. Scroll-Driven & Ambient Canvas Frame Animation (Scrollytelling Hero)
   const canvas = document.getElementById('hero-canvas');
   const scrollContainer = document.querySelector('.hero-scroll-container');
